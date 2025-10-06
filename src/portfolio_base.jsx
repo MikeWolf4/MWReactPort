@@ -500,12 +500,12 @@ export default function Portfolio() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold mb-8 text-center">About Me</h2>
           <div className="text-zinc-400 space-y-4 text-lg">
-            <p>Hey, I’m Michael Wolford — if you’re working on a game or web project and feeling stuck, I’m happy to help.</p>
+            <p>Hey, I’m Michael Wolford, if you’re working on a game or web project and feeling stuck, I’m happy to help.</p>
             <p>I’ve spent years working with Unreal Engine on things like locomotion setups, motion matching, ALSv4, combat and melee systems, weapon line tracing (1st & 3rd person), inventory, replication, and character asset management.</p>
             <p>On the web side, I also work with React, Three.js, and WebGL building interactive sites and tools that bring game assets or ideas to life right in the browser.</p>
             <p>Whether your Blueprint logic won’t behave, your React component chain’s breaking, or you just need a second pair of eyes to untangle a system, I get it. Balancing creativity and tech can be frustrating when you’re solo or short on time.</p>
            
-            <p>I’m here to help people get unstuck, learn something new, and keep their projects moving forward — without the stress. If that sounds like what you need, feel free to reach out.</p>
+            <p>I’m here to help people get unstuck, learn something new, and keep their projects moving forward without the stress. If that sounds like what you need, feel free to reach out.</p>
           </div>
         </div>
       </section>
