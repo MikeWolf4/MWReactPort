@@ -67,7 +67,7 @@ function Model({
   video6, video7, video8, video9, video10,
   setMainVideo,  modelRef,   
 }) {
-  const gltf = useGLTF('/tv_scene/tv_scene.gltf')
+  const gltf = useGLTF('tv_scene/tv_scene.gltf')
  
   const videoTexturesRef = useRef({})
 
@@ -189,16 +189,16 @@ function ThreeScene({ setMainVideo, modelRef,  setModelLoaded,performanceMode  }
         </mesh> */}
          <Model 
          modelRef={modelRef}
-          video1="/testvideo2.mp4"
-          video2="/testvideo2.mp4"
-          video3="/tvbars.mp4"
-          video4="/testvideo2.mp4"
-          video5="/testvideo2.mp4"
-          video6="/testvideo2.mp4"
-          video7="/tvstatic.mp4"
-          video8="/testvideo2.mp4"
-          video9="/testvideo2.mp4"
-          video10="/testvideo2.mp4"
+          video1="testvideo2.mp4"
+          video2="testvideo2.mp4"
+          video3="tvbars.mp4"
+          video4="testvideo2.mp4"
+          video5="testvideo2.mp4"
+          video6="testvideo2.mp4"
+          video7="tvstatic.mp4"
+          video8="testvideo2.mp4"
+          video9="testvideo2.mp4"
+          video10="testvideo2.mp4"
           setMainVideo={setMainVideo}
           setModelLoaded={setModelLoaded}
         >
