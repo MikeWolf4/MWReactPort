@@ -482,7 +482,7 @@ export default function Portfolio() {
               href="#projects"
               className="bg-emerald-500 hover:bg-emerald-600 text-black px-6 py-3 rounded font-semibold transition-colors"
             >
-              View Focus
+              My Focus
             </a>
             <a
               href="#contact"
