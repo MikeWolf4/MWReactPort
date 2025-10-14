@@ -4,7 +4,7 @@ import * as THREE from 'three'
 
 export function TestModel({
   url,
-  emissiveColor = '#ffffffff',
+  emissiveColor = '#ffffff',
   emissiveIntensity = -0.01,
   outlineColor = '#353535',
   outlineThickness = 0.002, // increase for thicker lines

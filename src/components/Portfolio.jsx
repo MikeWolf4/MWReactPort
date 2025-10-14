@@ -1,9 +1,11 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, Suspense } from 'react'
+
 import { Stats } from '@react-three/drei' // Keep Stats here if you want it in the UI header
 
 // Import the decoupled components
 import { ThreeScene } from './ThreeScene'
 import { ProjectCard } from './ProjectCard'
+import { LoadingScreen } from './LoadingScreen';
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState('web')
@@ -71,7 +73,7 @@ export default function Portfolio() {
       mainVideo.muted = muted
       mainVideo.volume = volume
       
-      // Try to play if unmuting
+      // try to play if unmuting
       if (!muted && hasInteracted) {
         mainVideo.play().catch(err => console.log('Autoplay prevented:', err))
       }
@@ -84,7 +86,7 @@ export default function Portfolio() {
     const newMuted = !muted
     setMuted(newMuted)
     
-    // Direct immediate update
+    // direct immediate update
     if (mainVideo) {
       mainVideo.muted = newMuted
       if (!newMuted) {
@@ -99,19 +101,19 @@ export default function Portfolio() {
       
       <header className="fixed top-0 w-full bg-black/80 backdrop-blur-sm border-b border-zinc-800 z-50">
         <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          {/* Left section - Logo */}
+          {/* left section - Logo */}
           <div className="flex items-center gap-4 w-1/4">
             <h1 className="text-xl font-bold text-emerald-400">MW</h1>
           </div>
           
-          {/* Center section - Navigation */}
+          {/* center section - Navigation */}
           <div className="flex gap-6 w-1/2 justify-center">
             <a href="#about" className="hover:text-emerald-400 transition-colors">About</a>
             <a href="#projects" className="hover:text-emerald-400 transition-colors">Skills</a>
             <a href="#contact" className="hover:text-emerald-400 transition-colors">Contact</a>
           </div>
           
-          {/* Right section - Controls */}
+          {/* right section - Controls */}
           <div className="hidden sm:flex items-center gap-3 w-1/4 justify-end">
             <Stats/>
             <button
@@ -155,7 +157,13 @@ export default function Portfolio() {
         {/* conditional rendering of threescene */}
         {isCanvasVisible && (
           <div className="absolute inset-0 z-0">
-            <ThreeScene modelRef={modelRef} setMainVideo={setMainVideo} setModelLoaded={setModelLoaded} performanceMode={performanceMode} />
+            <Suspense fallback={<LoadingScreen />}> 
+                <ThreeScene 
+                  modelRef={modelRef} 
+                  setMainVideo={setMainVideo} 
+                  performanceMode={performanceMode} 
+                />
+            </Suspense>
           </div>
         )}
         

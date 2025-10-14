@@ -11,6 +11,7 @@ import { TestModel } from '../three/TestModel'
 import { CameraRig } from '../three/CameraRig'
 
 
+
 export function ThreeScene({ setMainVideo, modelRef, setModelLoaded, performanceMode }) {
 
   return (
@@ -30,7 +31,7 @@ export function ThreeScene({ setMainVideo, modelRef, setModelLoaded, performance
         <coneGeometry args={[1, 1, 2]} />
         <meshBasicMaterial color="red" />
       </mesh>
-      <Suspense fallback={null}>
+      
         
         <Floor />
         <Model 
@@ -65,7 +66,7 @@ export function ThreeScene({ setMainVideo, modelRef, setModelLoaded, performance
             <Noise opacity={.04}/>
           </EffectComposer>
         )}
-      </Suspense>
+      
     </Canvas>
   )
 }
