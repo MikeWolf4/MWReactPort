@@ -1,5 +1,6 @@
 import './index.css'
-import Base1 from './portfolio_base.jsx'
+
+import Portfolio from './components/Portfolio'
 
 
 
@@ -7,7 +8,7 @@ import Base1 from './portfolio_base.jsx'
 function App() {
   return (
     <>
-      <Base1/>
+      <Portfolio />
     </>
   )
 }
