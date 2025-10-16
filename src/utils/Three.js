@@ -18,3 +18,4 @@ export function createVideoTexture(src, { muted = true, loop = true, rotation = 
 
   return { video, texture }
 }
+

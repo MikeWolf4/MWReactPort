@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef, Suspense } from 'react'
 
-import { Stats } from '@react-three/drei' // Keep Stats here if you want it in the UI header
-
-// Import the decoupled components
+import { Stats } from '@react-three/drei' 
+import { SpeakerMutedIcon, SpeakerUnmutedIcon, BurgerMenuIcon } from '../utils/SVGicons'; 
+import { HamburgerMenu } from "./HamburgerMenu.jsx";
 import { ThreeScene } from './ThreeScene'
 import { ProjectCard } from './ProjectCard'
 import { LoadingScreen } from './LoadingScreen';
@@ -15,11 +15,11 @@ export default function Portfolio() {
   const [hasInteracted, setHasInteracted] = useState(false)
   const [performanceMode, setPerformanceMode] = useState(false)
 
-    const [modelLoaded, setModelLoaded] = useState(false)
-    const modelRef = useRef()
+  const modelRef = useRef()
 
   const [isCanvasVisible, setIsCanvasVisible] = useState(true)
   const [isSectionVisible, setIsSectionVisible] = useState(true)
+  
 
   const webProjects = [
     {
@@ -79,6 +79,7 @@ export default function Portfolio() {
       }
     }
   }, [mainVideo, muted, volume, hasInteracted])
+  
 
   const handleMuteToggle = () => {
     console.log('Toggle mute clicked, current muted:', muted)
@@ -100,59 +101,74 @@ export default function Portfolio() {
     <div className="min-h-screen bg-black text-white">
       
       <header className="fixed top-0 w-full bg-black/80 backdrop-blur-sm border-b border-zinc-800 z-50">
-        <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          {/* left section - Logo */}
-          <div className="flex items-center gap-4 w-1/4">
+    <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        
+    
+        <div className="flex items-center gap-4">
             <h1 className="text-xl font-bold text-emerald-400">MW</h1>
-          </div>
-          
-          {/* center section - Navigation */}
-          <div className="flex gap-6 w-1/2 justify-center">
+        </div>
+     
+        <div className="flex gap-6  justify-center -ml-10">
             <a href="#about" className="hover:text-emerald-400 transition-colors">About</a>
             <a href="#projects" className="hover:text-emerald-400 transition-colors">Skills</a>
             <a href="#contact" className="hover:text-emerald-400 transition-colors">Contact</a>
-          </div>
-          
-          {/* right section - Controls */}
-          <div className="hidden sm:flex items-center gap-3 w-1/4 justify-end">
-            <Stats/>
-            <button
-              onClick={handleMuteToggle}
-              className={`px-4 py-2 rounded transition-colors min-w-[85px] ${
-                muted 
-                  ? "bg-red-500 text-white hover:bg-red-600"
-                  : "bg-emerald-500 text-black hover:bg-emerald-600"
-              }`}
-            >
-              {muted ? 'Unmute' : 'Mute'}
-            </button>
-            <input
-              type="range"
-              min="0"
-              max="1"
-              step="0.05"
-              value={volume}
-              onChange={(e) => {
-                setHasInteracted(true)
-                setVolume(parseFloat(e.target.value))
-              }}
-              className="w-40 accent-emerald-500"
-            />
-            <button
-              onClick={() => setPerformanceMode(!performanceMode)}
-              className={`px-4 py-2 rounded transition-colors min-w-[160px] ${
-                performanceMode
-                  ? "bg-yellow-500 text-black hover:bg-yellow-600"
-                  : "bg-zinc-800 text-zinc-400 hover:text-white"
-              }`}
-            >
-              {performanceMode ? 'Performance' : 'Quality'}
-            </button>
-          </div>
-        </nav>
-      </header>
+        </div>
+        
+      
+        <div className="flex items-center gap-3  justify-end">
+            
+            {/* Desktop-Only Controls (Stats and commented Audio) */}
+            <div className="**hidden sm:flex** items-center gap-3">
+{/* here is the audio stuff but I dont think I need it so commenting it just in case///////////////////////////// */}
 
-      <section className="h-screen flex items-center justify-center relative">
+     {/* <div className="flex items-center gap-2">
+
+         <button onClick={handleMuteToggle} className="p-2 text-zinc-400 hover:text-white transition-colors">
+            {muted || volume === 0
+                ? <SpeakerMutedIcon className="w-6 h-6 text-gray-800 dark:text-white" />
+                : <SpeakerUnmutedIcon className="w-6 h-6 text-gray-800 dark:text-white" />
+            }
+        </button>
+
+        <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.05"
+            value={volume}
+            onChange={(e) => {
+                setHasInteracted(true);
+                const newVolume = parseFloat(e.target.value);
+                setVolume(newVolume);
+            }}
+
+            className={`w-40 accent-emerald-500`}
+        />
+
+          </div> */}
+
+{/* here is the audio stuff but I dont think I need it so commenting it just in case///////////////////////////// */}
+
+            </div>
+          
+            <HamburgerMenu
+                isSectionVisible={isSectionVisible}
+                setIsSectionVisible={setIsSectionVisible}
+                isCanvasVisible={isCanvasVisible}
+                setIsCanvasVisible={setIsCanvasVisible}
+                performanceMode={performanceMode}
+                setPerformanceMode={setPerformanceMode}
+            />
+        </div>
+        
+    </nav>
+</header>
+      
+
+      {/* canvas title overlay */}
+      <section className="h-screen flex items-center justify-center relative">          
+{/* ////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
+       
         
         {/* conditional rendering of threescene */}
         {isCanvasVisible && (
@@ -166,28 +182,14 @@ export default function Portfolio() {
             </Suspense>
           </div>
         )}
-        
         <div className="text-center z-10">
+          
           <div className='flex justify-center gap-4 mb-8'>
             {/* hide section toggle button */}
-            <button
-              onClick={() => setIsSectionVisible(!isSectionVisible)}
-              className="border border-emerald-500 hover:bg-emerald-500/10 text-emerald-400 px-6 py-3 rounded font-semibold transition-colors"
-            >
-              {isSectionVisible ? "Hide Section" : "Show Section"}
-            </button>
+            
             
             {/* three.js canvas toggle button */}
-            <button
-              onClick={() => setIsCanvasVisible(!isCanvasVisible)}
-              className={`px-6 py-3 rounded font-semibold transition-colors ${
-                isCanvasVisible 
-                  ? "border border-red-600 hover:bg-red-600/10 text-red-400" 
-                  : "border border-emerald-500 hover:bg-emerald-500/10 text-emerald-400"
-              }`}
-            >
-              {isCanvasVisible ? "Disable 3D" : "Enable 3D"}
-            </button>
+         
           </div>
 
           {/* conditional rendering of section content */}
