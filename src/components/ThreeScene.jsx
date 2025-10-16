@@ -1,4 +1,4 @@
-import { Suspense } from 'react'
+
 import { Canvas } from '@react-three/fiber'
 
 import { EffectComposer, DepthOfField, Bloom, Vignette, Noise } from '@react-three/postprocessing'
