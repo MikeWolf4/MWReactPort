@@ -114,7 +114,7 @@ export default function Portfolio() {
             <a href="#contact" className="hover:text-emerald-400 transition-colors">Contact</a>
         </div>
         
-      
+      {/* <Stats/> */}
         <div className="flex items-center gap-3  justify-end">
             
             {/* Desktop-Only Controls (Stats and commented Audio) */}

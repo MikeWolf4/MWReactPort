@@ -22,7 +22,7 @@ export function ThreeScene({ setMainVideo, modelRef, setModelLoaded, performance
       <spotLight
         position={[5, 29, -22]}
         angle={Math.PI / 3}
-        intensity={3.4}
+        intensity={3.6}
         penumbra={.1}
         color={0xffffff}
         decay={0}
@@ -57,7 +57,7 @@ export function ThreeScene({ setMainVideo, modelRef, setModelLoaded, performance
           <EffectComposer disableNormalPass>
             <DepthOfField
                 focusDistance={0.07}
-                focalLength={0.07}
+                focalLength={.076}
                 bokehScale={1}
                 height={580}
             />

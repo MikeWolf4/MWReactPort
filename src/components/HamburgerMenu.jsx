@@ -19,7 +19,7 @@ export function  HamburgerMenu({
       {/* Hamburger Toggle */}
       <button
         onClick={() => setOpen(!open)}
-        className="p-3 bg-black/70 rounded-lg border border-zinc-700 hover:bg-black/90 transition"
+        className="p-3 bg-black/70  border-zinc-700 hover:bg-black/90 transition"
       >
         {open ? (
           <BurgerMenuIcon className="w-6 h-6 text-emerald-400" />
@@ -62,8 +62,8 @@ export function  HamburgerMenu({
             }}
             className={`px-3 py-2 rounded transition ${
               performanceMode
-                ? "bg-yellow-500/10 text-yellow-400 hover:bg-yellow-500/20"
-                : "bg-zinc-800 text-zinc-400 hover:text-white"
+                ? "hover:bg-yellow-500/10 text-yellow-400 hover:bg-yellow-500/20"
+                : "hover:bg-zinc-800/45 text-zinc-400 hover:text-white"
             }`}
           >
             {performanceMode ? "Performance" : "Quality"}
