@@ -20,9 +20,9 @@ export function ThreeScene({ setMainVideo, modelRef, setModelLoaded, performance
       <directionalLight position={[5, 5, 5]} rotation={0} intensity={.1} />
       <hemisphereLight skyColor={0xffffff} groundColor={0x444444} intensity={.5} />
       <spotLight
-        position={[5, 29, -22]}
+        position={[5, 24, -20]}
         angle={Math.PI / 3}
-        intensity={3.6}
+        intensity={5,5}
         penumbra={.1}
         color={0xffffff}
         decay={0}
