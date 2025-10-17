@@ -22,7 +22,7 @@ export function ThreeScene({ setMainVideo, modelRef, setModelLoaded, performance
       <spotLight
         position={[5, 24, -20]}
         angle={Math.PI / 3}
-        intensity={5.5}
+        intensity={5}
         penumbra={.1}
         color={0xffffff}
         decay={0}
@@ -37,33 +37,33 @@ export function ThreeScene({ setMainVideo, modelRef, setModelLoaded, performance
         <Model 
           modelRef={modelRef}
           video1="testvideo2.mp4"
-          video2="testvideo2.mp4"
+          video2="tvbars.mp4"
           video3="tvbars.mp4"
           video4="testvideo2.mp4"
-          video5="testvideo2.mp4"
+          video5="tvbars.mp4"
           video6="testvideo2.mp4"
           video7="tvstatic.mp4"
-          video8="testvideo2.mp4"
+          video8="tvstatic.mp4"
           video9="testvideo2.mp4"
           video10="testvideo2.mp4"
           setMainVideo={setMainVideo}
           setModelLoaded={setModelLoaded}
         />
 
-        {/* <TestModel url="animefe.glb" frustumCulled={false} /> */}
+        <TestModel url="animefe.glb" frustumCulled={false} />
         <CameraRig />
         
         {!performanceMode && (
           <EffectComposer disableNormalPass>
             <DepthOfField
-                focusDistance={0.07}
-                focalLength={.076}
+                focusDistance={0.06}
+                focalLength={.09}
                 bokehScale={1}
                 height={580}
             />
             <Bloom luminanceThreshold={0} mipmapBlur luminanceSmoothing={.9} intensity={.2} />
             <Vignette offset={.8} darkness={0.4} eskil={false} blendFunction={BlendFunction.NORMAL} />
-            <Noise opacity={.04}/>
+            <Noise opacity={.05}/>
           </EffectComposer>
         )}
       

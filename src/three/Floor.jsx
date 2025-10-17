@@ -10,7 +10,7 @@ export function Floor() {
         <planeGeometry args={[150, 150]} />
         <MeshReflectorMaterial
           blur={[300, 20]}
-          resolution={512}
+          resolution={1024}
           mixBlur={.5}
           mixStrength={800}
           roughnessMap={roughnessMap}

@@ -7,6 +7,10 @@ import { ThreeScene } from './ThreeScene'
 import { ProjectCard } from './ProjectCard'
 import { LoadingScreen } from './LoadingScreen';
 
+
+// Define a global breakpoint outside the component or as a constant inside
+const MOBILE_BREAKPOINT = 768; 
+
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState('web')
   const [mainVideo, setMainVideo] = useState(null)
@@ -17,8 +21,18 @@ export default function Portfolio() {
 
   const modelRef = useRef()
 
-  const [isCanvasVisible, setIsCanvasVisible] = useState(true)
+  // Initialize state based on the initial screen size check
+  // This uses a function as the initial state value to check window size only once on mount
+  const [isCanvasVisible, setIsCanvasVisible] = useState(() => {
+    // Only check window if we are in a client environment
+    if (typeof window === 'undefined') return true; 
+    
+    // Set to false if the initial window width is less than the mobile breakpoint
+    return window.innerWidth >= MOBILE_BREAKPOINT;
+  });
+  
   const [isSectionVisible, setIsSectionVisible] = useState(true)
+  
   
 
   const webProjects = [
@@ -67,6 +81,32 @@ export default function Portfolio() {
     },
   ]
 
+  //Mobile/Canvas Visibility Logic
+  useEffect(() => {
+    // Only attach listener if we are in the browser
+    if (typeof window === 'undefined') return;
+
+    const handleResize = () => {
+      // Set isCanvasVisible to true only if screen width is at or above the breakpoint
+      const shouldBeVisible = window.innerWidth >= MOBILE_BREAKPOINT;
+      setIsCanvasVisible(shouldBeVisible);
+      
+      if (!shouldBeVisible) {
+        console.log("3D Canvas automatically disabled for small screen.");
+      }
+    };
+
+    // Attach event listener for screen resizing/rotation
+    window.addEventListener('resize', handleResize);
+
+    //Remove the listener when the component unmounts
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []); // Empty array runs once on mount
+  //Mobile/Canvas Visibility Logic
+
+
   useEffect(() => {
     if (mainVideo) {
       console.log('Setting video muted:', muted, 'volume:', volume)
@@ -107,21 +147,21 @@ export default function Portfolio() {
         <div className="flex items-center gap-4">
             <h1 className="text-xl font-bold text-emerald-400">MW</h1>
         </div>
-     
-        <div className="flex gap-6  justify-center -ml-10">
+      
+        <div className="flex gap-6  justify-center -ml-10">
             <a href="#about" className="hover:text-emerald-400 transition-colors">About</a>
             <a href="#projects" className="hover:text-emerald-400 transition-colors">Skills</a>
             <a href="#contact" className="hover:text-emerald-400 transition-colors">Contact</a>
         </div>
         
       <Stats/>
-        <div className="flex items-center gap-3  justify-end">
+        <div className="flex items-center gap-3  justify-end">
             
             {/* Desktop-Only Controls (Stats and commented Audio) */}
             <div className="**hidden sm:flex** items-center gap-3">
 {/* here is the audio stuff but I dont think I need it so commenting it just in case///////////////////////////// */}
 
-     {/* <div className="flex items-center gap-2">
+     {/* <div className="flex items-center gap-2">
 
          <button onClick={handleMuteToggle} className="p-2 text-zinc-400 hover:text-white transition-colors">
             {muted || volume === 0
@@ -166,19 +206,19 @@ export default function Portfolio() {
       
 
       {/* canvas title overlay */}
-      <section className="h-screen flex items-center justify-center relative">          
+      <section className="h-screen flex items-center justify-center relative">          
 {/* ////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
-       
+        
         
         {/* conditional rendering of threescene */}
         {isCanvasVisible && (
           <div className="absolute inset-0 z-0">
             <Suspense fallback={<LoadingScreen />}> 
-                <ThreeScene 
-                  modelRef={modelRef} 
-                  setMainVideo={setMainVideo} 
-                  performanceMode={performanceMode} 
-                />
+              <ThreeScene 
+                modelRef={modelRef} 
+                setMainVideo={setMainVideo} 
+                performanceMode={performanceMode} 
+              />
             </Suspense>
           </div>
         )}
@@ -189,7 +229,7 @@ export default function Portfolio() {
             
             
             {/* three.js canvas toggle button */}
-         
+          
           </div>
 
           {/* conditional rendering of section content */}
