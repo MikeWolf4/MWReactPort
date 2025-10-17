@@ -55,12 +55,12 @@ export function ThreeScene({ setMainVideo, modelRef, setModelLoaded, performance
         
         {!performanceMode && (
           <EffectComposer disableNormalPass>
-            <DepthOfField
+            {/* <DepthOfField
                 focusDistance={0.07}
                 focalLength={.076}
                 bokehScale={1}
                 height={580}
-            />
+            /> */}
             <Bloom luminanceThreshold={0} mipmapBlur luminanceSmoothing={.9} intensity={.2} />
             <Vignette offset={.8} darkness={0.4} eskil={false} blendFunction={BlendFunction.NORMAL} />
             <Noise opacity={.04}/>

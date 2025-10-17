@@ -63,15 +63,15 @@ export function TestModel({
         object={scene}
         rotation={[0, 0, 0]}
         scale={[15, 15, 15]}
-        position={[2, -14, -25]}
+        position={[.5, -13, -20]}
       />
       {/* outline pass */}
       {outlineRef.current && (
         <primitive
           object={outlineRef.current}
           rotation={[0, 0, 0]}
-          scale={[15, 15, 15]}
-          position={[2, -14, -25]}
+          scale={[15.03, 15, 15]}
+          position={[.5, -13, -20]}
         />
       )}
     </>
