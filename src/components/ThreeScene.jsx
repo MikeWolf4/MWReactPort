@@ -9,16 +9,7 @@ import { Model } from '../three/Model'
 import { TestModel } from '../three/TestModel'
 import { CameraRig } from '../three/CameraRig'
 
-/**
- * ThreeScene Component
- * Renders the main 3D scene with optional performance mode.
- *
- * Props:
- * - setMainVideo: function — callback to set the main video element
- * - modelRef: ref — reference to the main model
- * - setModelLoaded: function — callback when the model loads
- * - performanceMode: boolean — toggle between high quality and performance
- */
+
 function ThreeSceneComponent({ setMainVideo, modelRef, setModelLoaded, performanceMode }) {
   return (
     <Canvas
@@ -83,8 +74,6 @@ function ThreeSceneComponent({ setMainVideo, modelRef, setModelLoaded, performan
   )
 }
 
-// 1. Rename the original function (optional, but good practice)
-// 2. Wrap the function with React.memo()
-// 3. Export the memoized component
+
 export default React.memo(ThreeSceneComponent)
 
