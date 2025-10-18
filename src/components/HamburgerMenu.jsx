@@ -82,7 +82,7 @@ export function HamburgerMenu({
                 : "text-zinc-400 hover:text-white hover:bg-zinc-800/45"
             }`}
           >
-            {isStatsVisible ? "Hide Stats" : "Show Stats"}
+            {isStatsVisible ? "Stats" : "Stats"}
           </button>
 
         </div>

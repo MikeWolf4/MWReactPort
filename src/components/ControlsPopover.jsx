@@ -61,7 +61,7 @@ const ControlsPopover = ({
             : 'bg-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-700'
         }`}
       >
-        {performanceMode ? '⚡ Performance Mode' : '🌈 Quality Mode'}
+        {performanceMode ? 'Performance Mode' : 'Quality Mode'}
       </button>
     </div>
   )
