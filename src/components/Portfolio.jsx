@@ -252,12 +252,12 @@ export default function Portfolio() {
               person), inventory, replication, and character asset management.
             </p>
             <p>
-              On the web side, I also work with React, Three.js, and WebGL — building interactive
+              On the web side, I also work with React, Three.js, and WebGL, building interactive
               sites and tools that bring game assets or ideas to life right in the browser.
             </p>
             <p>
               Whether your Blueprint logic won’t behave, your React component chain’s breaking, or
-              you just need a second pair of eyes to untangle a system — I get it. Balancing
+              you just need a second pair of eyes to untangle a system, I get it. Balancing
               creativity and tech can be frustrating when you’re solo or short on time.
             </p>
             <p>
