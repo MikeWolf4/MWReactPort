@@ -1,3 +1,4 @@
+import React from 'react' // 👈 Import React to access React.memo
 import { Canvas } from '@react-three/fiber'
 import { EffectComposer, DepthOfField, Bloom, Vignette, Noise } from '@react-three/postprocessing'
 import { BlendFunction } from 'postprocessing'
@@ -18,7 +19,7 @@ import { CameraRig } from '../three/CameraRig'
  * - setModelLoaded: function — callback when the model loads
  * - performanceMode: boolean — toggle between high quality and performance
  */
-export function ThreeScene({ setMainVideo, modelRef, setModelLoaded, performanceMode }) {
+function ThreeSceneComponent({ setMainVideo, modelRef, setModelLoaded, performanceMode }) {
   return (
     <Canvas
       camera={{ position: [0, 0, 3], fov: 45 }}
@@ -81,4 +82,9 @@ export function ThreeScene({ setMainVideo, modelRef, setModelLoaded, performance
     </Canvas>
   )
 }
+
+// 1. Rename the original function (optional, but good practice)
+// 2. Wrap the function with React.memo()
+// 3. Export the memoized component
+export const ThreeScene = React.memo(ThreeSceneComponent)
 

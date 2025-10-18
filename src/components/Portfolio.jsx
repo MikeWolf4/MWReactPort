@@ -80,16 +80,16 @@ export default function Portfolio() {
   // ────────────────────────────────
   // Effects
   // ────────────────────────────────
-  useEffect(() => {
-    if (mainVideo) {
-      mainVideo.muted = muted
-      mainVideo.volume = volume
+  // useEffect(() => {
+  //   if (mainVideo) {
+  //     mainVideo.muted = muted
+  //     mainVideo.volume = volume
 
-      if (!muted && hasInteracted) {
-        mainVideo.play().catch(err => console.log('Autoplay prevented:', err))
-      }
-    }
-  }, [mainVideo, muted, volume, hasInteracted])
+  //     if (!muted && hasInteracted) {
+  //       mainVideo.play().catch(err => console.log('Autoplay prevented:', err))
+  //     }
+  //   }
+  // }, [mainVideo, muted, volume, hasInteracted])
 
   useEffect(() => {
   // Function to check window size
@@ -149,7 +149,7 @@ export default function Portfolio() {
             </a>
           </div>
 
-          {!isStatsVisible && (
+          {isStatsVisible && (
           <div className="absolute inset-0 z-0">
             <Stats/>
           </div>
