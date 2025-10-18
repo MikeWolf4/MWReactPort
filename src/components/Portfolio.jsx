@@ -182,7 +182,6 @@ export default function Portfolio() {
               />
             </div> 
             */}
-
             <HamburgerMenu
               isSectionVisible={isSectionVisible}
               setIsSectionVisible={setIsSectionVisible}

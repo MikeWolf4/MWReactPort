@@ -13,7 +13,7 @@ export function LoadingScreen() {
       <div className="text-right">
         {/* Header */}
         <h1 className="text-2xl font-bold text-emerald-400 mb-3">
-          Loading Assets...
+          ₍^. .^₎⟆ Just a sec, loading assets...
         </h1>
 
         {/* Progress Bar Container */}
@@ -36,3 +36,4 @@ export function LoadingScreen() {
     </div>
   )
 }
+

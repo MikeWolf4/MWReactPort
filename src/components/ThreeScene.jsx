@@ -3,6 +3,7 @@ import { Canvas } from '@react-three/fiber'
 import { EffectComposer, DepthOfField, Bloom, Vignette, Noise } from '@react-three/postprocessing'
 import { BlendFunction } from 'postprocessing'
 
+
 // R3F Components
 import { Floor } from '../three/Floor'
 import { Model } from '../three/Model'
@@ -12,7 +13,7 @@ import { CameraRig } from '../three/CameraRig'
 
 function ThreeSceneComponent({ setMainVideo, modelRef, setModelLoaded, performanceMode }) {
   return (
-    <Canvas 
+    <Canvas
       camera={{ position: [0, 0, 3], fov: 45 }}
       dpr={performanceMode ? [0.7, 1] : [1, 1.5]} // Lower DPR for mobile/performance
     >
@@ -22,7 +23,7 @@ function ThreeSceneComponent({ setMainVideo, modelRef, setModelLoaded, performan
       <spotLight
         position={[5, 24, -20]}
         angle={Math.PI / 3}
-        intensity={3}
+        intensity={5}
         penumbra={0.1}
         color={0xffffff}
         decay={0}
@@ -37,7 +38,7 @@ function ThreeSceneComponent({ setMainVideo, modelRef, setModelLoaded, performan
       {/* Postprocessing Effects (only in quality mode) */}
       {!performanceMode && (
         <EffectComposer disableNormalPass>
-          <DepthOfField focusDistance={0.06} focalLength={0.09} bokehScale={1} height={580} />
+          <DepthOfField focusDistance={0.06} focalLength={0.09} bokehScale={.9} height={580} />
           <Bloom
             luminanceThreshold={0}
             mipmapBlur
@@ -73,7 +74,6 @@ function ThreeSceneComponent({ setMainVideo, modelRef, setModelLoaded, performan
     </Canvas>
   )
 }
-
 
 export default React.memo(ThreeSceneComponent)
 
