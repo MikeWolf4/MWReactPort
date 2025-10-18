@@ -17,7 +17,7 @@ export default function Portfolio() {
   const [performanceMode, setPerformanceMode] = useState(false)
   const [isCanvasVisible, setIsCanvasVisible] = useState(true)
   const [isSectionVisible, setIsSectionVisible] = useState(true)
-  const [isStatsVisible, setIsStatsVisible] = useState(true)
+  const [isStatsVisible, setIsStatsVisible] = useState(false)
 
   const modelRef = useRef()
 
