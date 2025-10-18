@@ -86,5 +86,5 @@ function ThreeSceneComponent({ setMainVideo, modelRef, setModelLoaded, performan
 // 1. Rename the original function (optional, but good practice)
 // 2. Wrap the function with React.memo()
 // 3. Export the memoized component
-export const ThreeScene = React.memo(ThreeSceneComponent)
+export default React.memo(ThreeSceneComponent)
 

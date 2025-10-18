@@ -1,11 +1,12 @@
-import { useState, useEffect, useRef, Suspense } from 'react'
+import { useState, useEffect, useRef, lazy, Suspense } from 'react'
 import { Stats } from '@react-three/drei'
 
 import { SpeakerMutedIcon, SpeakerUnmutedIcon, BurgerMenuIcon } from '../utils/SVGicons'
 import { HamburgerMenu } from './HamburgerMenu.jsx'
-import { ThreeScene } from './ThreeScene'
+// import { ThreeScene } from './ThreeScene'
 import { ProjectCard } from './ProjectCard'
 import { LoadingScreen } from './LoadingScreen'
+const ThreeScene = lazy(() => import("./ThreeScene"));
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState('web')
