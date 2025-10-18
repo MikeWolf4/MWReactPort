@@ -70,7 +70,7 @@ export function TestModel({
         <primitive
           object={outlineRef.current}
           rotation={[0, 0, 0]}
-          scale={[15.03, 15, 15]}
+          scale={[15.0, 15, 15]}
           position={[.5, -13, -20]}
         />
       )}

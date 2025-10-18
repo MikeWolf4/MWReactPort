@@ -9,7 +9,7 @@ export function Floor() {
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[-5, -13.5, 5]}>
         <planeGeometry args={[150, 150]} />
         <MeshReflectorMaterial
-          blur={[300, 20]}
+          blur={[30, 20]}
           resolution={1024}
           mixBlur={.5}
           mixStrength={800}
