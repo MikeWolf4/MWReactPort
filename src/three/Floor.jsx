@@ -2,9 +2,7 @@ import { MeshReflectorMaterial, useTexture } from '@react-three/drei'
 
 export function Floor() {
     const roughnessMap = useTexture('worn-rusted-painted-bl/worn-rusted-painted_roughness.png')
-    const normalMap = useTexture('worn-rusted-painted-bl/worn-rusted-painted_normal-ogl.png')
-    const metalMap = useTexture('worn-rusted-painted-bl/worn-rusted-painted_metallic.png')
-
+ 
     return (
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[-5, -13.5, 5]}>
         <planeGeometry args={[150, 150]} />

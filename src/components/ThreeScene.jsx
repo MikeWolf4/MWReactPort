@@ -12,7 +12,7 @@ import { CameraRig } from '../three/CameraRig'
 
 function ThreeSceneComponent({ setMainVideo, modelRef, setModelLoaded, performanceMode }) {
   return (
-    <Canvas
+    <Canvas 
       camera={{ position: [0, 0, 3], fov: 45 }}
       dpr={performanceMode ? [0.7, 1] : [1, 1.5]} // Lower DPR for mobile/performance
     >
