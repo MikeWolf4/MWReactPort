@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import { useGLTF } from '@react-three/drei'
 import * as THREE from 'three'
 
@@ -7,25 +7,20 @@ export function TestModel({
   emissiveColor = '#ffffff',
   emissiveIntensity = -0.01,
   outlineColor = '#353535',
-  outlineThickness = 0.002, // increase for thicker lines
+  outlineThickness = 0.002,
 }) {
   const meshRef = useRef()
-  const outlineRef = useRef()
   const { scene } = useGLTF(url)
+  const [outlineScene, setOutlineScene] = useState(null)
 
   useEffect(() => {
     if (!scene) return
 
-    // clone the scene for the outline layer
-    const outlineScene = scene.clone()
+    const outlineClone = scene.clone()
 
-    scene.traverse((child, index) => {
+    scene.traverse((child) => {
       if (child.isMesh) {
         const oldMat = child.material
-        child.castShadow = false
-        child.receiveShadow = false
-
-        // main toon material
         child.material = new THREE.MeshToonMaterial({
           color: oldMat.color ? oldMat.color.clone() : new THREE.Color('white'),
           map: oldMat.map || null,
@@ -40,38 +35,34 @@ export function TestModel({
       }
     })
 
-    outlineScene.traverse((child) => {
+    outlineClone.traverse((child) => {
       if (child.isMesh) {
-        // outline material black backface only no lighting
         child.material = new THREE.MeshBasicMaterial({
           color: new THREE.Color(outlineColor),
           side: THREE.BackSide,
         })
-        // slightly scale up for visible outline
         child.scale.multiplyScalar(1 + outlineThickness)
       }
     })
 
-    outlineRef.current = outlineScene
+    setOutlineScene(outlineClone) // ✅ triggers React re-render
   }, [scene, emissiveColor, emissiveIntensity, outlineColor, outlineThickness])
 
   return (
     <>
-      {/* main model */}
       <primitive
         ref={meshRef}
         object={scene}
         rotation={[0, 0, 0]}
         scale={[15, 15, 15]}
-        position={[.5, -13, -20]}
+        position={[0.5, -13, -20]}
       />
-      {/* outline pass */}
-      {outlineRef.current && (
+      {outlineScene && (
         <primitive
-          object={outlineRef.current}
+          object={outlineScene}
           rotation={[0, 0, 0]}
-          scale={[15.0, 15, 15]}
-          position={[.5, -13, -20]}
+          scale={[15, 15, 15]}
+          position={[0.5, -13, -20]}
         />
       )}
     </>
