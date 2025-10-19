@@ -23,7 +23,7 @@ function ThreeSceneComponent({ setMainVideo, modelRef, setModelLoaded, performan
       <spotLight
         position={[5, 24, -20]}
         angle={Math.PI / 3}
-        intensity={5}
+        intensity={6}
         penumbra={0.1}
         color={0xffffff}
         decay={0}

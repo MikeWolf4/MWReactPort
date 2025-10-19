@@ -24,7 +24,7 @@ console.log(child)
   const name = child.name.toLowerCase()
 
   // Character meshes
-  if (/(cyber|katana)/i.test(name)) {
+  if (/(cyber|23)/i.test(name)) {
     const oldMat = child.material
     child.material = new THREE.MeshStandardMaterial({
       color: oldMat.color?.clone() || new THREE.Color('silver'),
