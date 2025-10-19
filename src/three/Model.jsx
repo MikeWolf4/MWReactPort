@@ -57,7 +57,7 @@ export function Model({
         material.map = videoTexture.texture
         material.emissive = new THREE.Color(0xffffff)
         material.emissiveMap = videoTexture.texture
-        material.emissiveIntensity = 0.90
+        material.emissiveIntensity = 0.60
         material.color.set(0xffffff)
         material.needsUpdate = true
       }

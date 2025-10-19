@@ -58,16 +58,16 @@ function ThreeSceneComponent({ setMainVideo, modelRef, setModelLoaded, performan
       {/* Model: swap videos based on performanceMode */}
       <Model
         modelRef={modelRef}
-        video1={performanceMode ? 'testvideo21.mp4' : 'testvideo2.mp4'}
+        video1={performanceMode ? 'testvideo21.mp4' : 'testvideo21.mp4'}
         video2={performanceMode ? 'tvbars1.mp4' : 'tvbars.mp4'}
         video3={performanceMode ? 'tvbars.mp4' : 'tvbars.mp4'}
         video4={performanceMode ? 'testvideo2.mp4' : 'testvideo2.mp4'}
         video5={performanceMode ? 'tvbars.mp4' : 'tvbars.mp4'}
-        video6={performanceMode ? 'testvideo2.mp4' : 'testvideo2.mp4'}
+        video6={performanceMode ? 'tvbars.mp4' : 'tvbars1.mp4'}
         video7={performanceMode ? 'tvstatic1.mp4' : 'tvstatic.mp4'}
         video8={performanceMode ? 'tvstatic1.mp4' : 'tvstatic.mp4'}
-        video9={performanceMode ? 'testvideo21.mp4' : 'testvideo2.mp4'}
-        video10={performanceMode ? 'testvideo21.mp4' : 'testvideo2.mp4'}
+        video9={performanceMode ? 'testvideo21.mp4' : 'tvbars.mp4'}
+        video10={performanceMode ? 'testvideo21.mp4' : 'tvbars.mp4'}
         setMainVideo={setMainVideo}
         setModelLoaded={setModelLoaded}
       />
