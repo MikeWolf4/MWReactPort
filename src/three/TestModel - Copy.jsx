@@ -18,36 +18,23 @@ export function TestModel({
 
     const outlineClone = scene.clone()
 
-  scene.traverse((child) => {
-  if (!child.isMesh) return
-console.log(child)
-  const name = child.name.toLowerCase()
+    scene.traverse((child) => {
+      if (child.isMesh) {
+        const oldMat = child.material
+        child.material = new THREE.MeshToonMaterial({
+          color: oldMat.color ? oldMat.color.clone() : new THREE.Color('white'),
+          map: oldMat.map || null,
+          emissive: new THREE.Color(emissiveColor),
+          emissiveIntensity,
+          transparent: oldMat.transparent || false,
+          opacity: oldMat.opacity ?? 1,
+          alphaMap: oldMat.alphaMap || null,
+          side: THREE.FrontSide,
+          depthWrite: oldMat.depthWrite ?? true,
+        })
+      }
+    })
 
-  // Character meshes
-  if (/(cyber|katana)/i.test(name)) {
-    const oldMat = child.material
-    child.material = new THREE.MeshStandardMaterial({
-      color: oldMat.color?.clone() || new THREE.Color('silver'),
-      roughness: .2,
-      metalness: 1,
-      map: oldMat.map || null,
-      side: THREE.FrontSide,
-    })
-  } 
- else {
-    const oldMat = child.material
-    child.material = new THREE.MeshToonMaterial({
-      color: oldMat.color?.clone() || new THREE.Color('white'),
-      map: oldMat.map || null,
-      emissive: new THREE.Color(emissiveColor),
-      emissiveIntensity,
-      transparent: oldMat.transparent || false,
-      opacity: oldMat.opacity ?? 1,
-      alphaMap: oldMat.alphaMap || null,
-      side: THREE.DoubleSide,
-    })
-  }
-})
     outlineClone.traverse((child) => {
       if (child.isMesh) {
         child.material = new THREE.MeshBasicMaterial({
@@ -58,7 +45,7 @@ console.log(child)
       }
     })
 
-    setOutlineScene(outlineClone) 
+    setOutlineScene(outlineClone) // ✅ triggers React re-render
   }, [scene, emissiveColor, emissiveIntensity, outlineColor, outlineThickness])
 
   return (
@@ -67,15 +54,15 @@ console.log(child)
         ref={meshRef}
         object={scene}
         rotation={[0, 0, 0]}
-        scale={[14, 14, 14]}
-        position={[0.5, -13, -20]}
+        scale={[13, 13, 13]}
+        position={[0.5, -14, -20]}
       />
       {outlineScene && (
         <primitive
           object={outlineScene}
           rotation={[0, 0, 0]}
-          scale={[14, 14, 14]}
-          position={[0.5, -13, -20]}
+          scale={[13, 13, 13]}
+          position={[0.5, -14, -20]}
         />
       )}
     </>

@@ -12,7 +12,7 @@ export default function Portfolio() {
   const [activeSection, setActiveSection] = useState('web')
   const [mainVideo, setMainVideo] = useState(null)
   const [muted, setMuted] = useState(true)
-  const [volume, setVolume] = useState(0.25)
+  // const [volume, setVolume] = useState(0.25)
   const [hasInteracted, setHasInteracted] = useState(false)
   const [performanceMode, setPerformanceMode] = useState(false)
   const [isCanvasVisible, setIsCanvasVisible] = useState(true)
@@ -213,12 +213,19 @@ export default function Portfolio() {
 
         {isSectionVisible && (
           <div className="relative z-10 text-center px-6">
+             <div className="bg-zinc-800/40 border border-gray-400/20 rounded-lg p-5 mb-8">
             <h2 className="text-6xl font-bold mb-4">Michael Wolford</h2>
-            <p className="text-2xl text-zinc-400 mb-8">Web Developer | Game Developer</p>
-            <p className="text-lg text-zinc-500 max-w-2xl mx-auto mb-8">
+
+           
+
+            <p className="text-2xl text-white-400 mb-8">Web Developer | Game Developer</p>
+            <p className="text-lg text-white-500 max-w-2xl mx-auto mb-8 ">
               I build things for fun and help others solve problems. React, JavaScript, Unreal
               Engine.
             </p>
+
+            </div>
+
             <div className="flex gap-4 justify-center">
               <a
                 href="#projects"
