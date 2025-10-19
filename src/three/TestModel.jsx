@@ -7,7 +7,7 @@ export function TestModel({
   emissiveColor = '#ffffff',
   emissiveIntensity = -0.01,
   outlineColor = '#353535',
-  outlineThickness = 0.002,
+  outlineThickness = 0.0025,
 }) {
   const meshRef = useRef()
   const { scene } = useGLTF(url)

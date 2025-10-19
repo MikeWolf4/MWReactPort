@@ -213,7 +213,7 @@ export default function Portfolio() {
 
         {isSectionVisible && (
           <div className="relative z-10 text-center px-6">
-             <div className="bg-zinc-800/40 border border-gray-400/20 rounded-lg p-5 mb-8">
+             <div className="bg-zinc-800/40  rounded-lg p-5 mb-8">
             <h2 className="text-6xl font-bold mb-4">Michael Wolford</h2>
 
            

@@ -4,7 +4,7 @@ export function Floor() {
     const roughnessMap = useTexture('worn-rusted-painted-bl/worn-rusted-painted_roughness.png')
  
     return (
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[-5, -13.5, 5]}>
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[-5, -13.4, 5]}>
         <planeGeometry args={[150, 150]} />
         <MeshReflectorMaterial
           blur={[30, 20]}

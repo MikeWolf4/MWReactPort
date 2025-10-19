@@ -20,16 +20,16 @@ export function HamburgerMenu({
             {/* --- Hamburger Toggle Button --- */}
             <button
                 onClick={() => setOpen(prev => !prev)}
-                className="p-3 bg-black/70 border border-zinc-700 rounded-lg hover:bg-black/90 transition"
+                className="p-3 bg-black/70  rounded-lg hover:hover:bg-zinc-800/45 transition"
             >
-                <BurgerMenuIcon className="w-6 h-6 text-emerald-400" />
+                <BurgerMenuIcon className="w-8 h-8 text-emerald-400" />
             </button>
 
             {/* --- Dropdown Menu --- 
             */}
             <div
                 className={`
-                    absolute right-0 mt-3 w-48 bg-black/80 border border-zinc-700 
+                    absolute right-0 mt-3 w-48 bg-black/80  
                     rounded-xl shadow-lg backdrop-blur-md p-2 text-sm flex flex-col gap-2
                     
                     // 1. Base transition properties
