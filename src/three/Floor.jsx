@@ -9,16 +9,16 @@ export function Floor() {
         <MeshReflectorMaterial
           blur={[30, 20]}
           resolution={1024}
-          mixBlur={.5}
+          mixBlur={.9}
           mixStrength={800}
           roughnessMap={roughnessMap}
           // normalMap={normalMap}
           // metalnessMap={metalMap}
           roughness={1}
           depthScale={3}
-          minDepthThreshold={0.8}
-          maxDepthThreshold={1.2}
-          color="#111111"
+          minDepthThreshold={0.3}
+          maxDepthThreshold={.6}
+          color="#020202"
           metalness={1}
         />
       </mesh>

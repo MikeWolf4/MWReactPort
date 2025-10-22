@@ -16,17 +16,17 @@ import { CameraRig } from '../three/CameraRig'
 function ThreeSceneComponent({ setMainVideo, modelRef, setModelLoaded, performanceMode }) {
   return (
     <Canvas
-      camera={{ position: [0, 0, 3], fov: 41 }}
+      camera={{ position: [0, 0, 3], fov: 38 }}
       dpr={performanceMode ? [1, 1.5] : [1, 1.5]} // Lower DPR for mobile/performance
     >
       {/* Lights */}
       <directionalLight position={[5, 5, 5]} rotation={0} intensity={0.1} />
       <hemisphereLight skyColor={0xffffff} groundColor={0x444444} intensity={0.5} />
       <spotLight
-        position={[5, 24, -20]}
+        position={[5, 24, -50]}
         angle={Math.PI / 3}
-        intensity={performanceMode ? 1 : 5}
-        penumbra={0.1}
+        intensity={performanceMode ? 1 : 5.4}
+        penumbra={.9999}
         color={0xffffff}
         decay={0}
       />
