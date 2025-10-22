@@ -4,15 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host 0.0.0.0",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "dev": "vite --host 0.0.0.0"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.6",
     "@react-three/postprocessing": "^3.0.4",
+    "r3f-perf": "^7.2.3",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "three": "^0.180.0"

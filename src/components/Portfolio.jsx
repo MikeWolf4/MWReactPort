@@ -1,11 +1,10 @@
 import { useState, useEffect, useRef, lazy, Suspense } from 'react'
 import { Stats } from '@react-three/drei'
-
-import { SpeakerMutedIcon, SpeakerUnmutedIcon, BurgerMenuIcon } from '../utils/SVGicons'
 import { HamburgerMenu } from './HamburgerMenu.jsx'
-// import { ThreeScene } from './ThreeScene'
 import { ProjectCard } from './ProjectCard'
 import { LoadingScreen } from './LoadingScreen'
+import { Perf } from 'r3f-perf'
+console.log("yes")
 const ThreeScene = lazy(() => import("./ThreeScene"));
 
 export default function Portfolio() {
@@ -20,6 +19,7 @@ export default function Portfolio() {
   const [isStatsVisible, setIsStatsVisible] = useState(false)
 
   const modelRef = useRef()
+
 
   // ────────────────────────────────
   // Project Data
@@ -129,6 +129,7 @@ export default function Portfolio() {
   // ────────────────────────────────
   return (
     <div className="min-h-screen bg-black text-white">
+
       {/* ─────────────── HEADER ─────────────── */}
       <header className="fixed top-0 w-full bg-black/80 backdrop-blur-sm border-b border-zinc-800 z-50">
         <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -153,6 +154,7 @@ export default function Portfolio() {
           {isStatsVisible && (
           <div className="absolute inset-0 z-0">
             <Stats/>
+             
           </div>
         )}
 
@@ -202,6 +204,7 @@ export default function Portfolio() {
         {isCanvasVisible && (
           <div className="absolute inset-0 z-0">
             <Suspense fallback={<LoadingScreen />}>
+            
               <ThreeScene
                 modelRef={modelRef}
                 setMainVideo={setMainVideo}

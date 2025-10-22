@@ -1,8 +1,10 @@
 import React from 'react' // 👈 Import React to access React.memo
 import { Canvas } from '@react-three/fiber'
-import { EffectComposer, DepthOfField, Bloom, Vignette, Noise } from '@react-three/postprocessing'
-import { BlendFunction } from 'postprocessing'
+import { EffectComposer, DepthOfField, Bloom, Vignette, Noise, Glitch } from '@react-three/postprocessing'
+import { BlendFunction} from 'postprocessing'
 import { MeshReflectorMaterial, useTexture } from '@react-three/drei'
+import { Perf } from 'r3f-perf'
+
 
 
 
@@ -14,6 +16,7 @@ import { CameraRig } from '../three/CameraRig'
 
 
 function ThreeSceneComponent({ setMainVideo, modelRef, setModelLoaded, performanceMode }) {
+  
   return (
     <Canvas
       camera={{ position: [0, 0, 3], fov: 38 }}
@@ -23,7 +26,7 @@ function ThreeSceneComponent({ setMainVideo, modelRef, setModelLoaded, performan
       <directionalLight position={[5, 5, 5]} rotation={0} intensity={0.1} />
       <hemisphereLight skyColor={0xffffff} groundColor={0x444444} intensity={0.5} />
       <spotLight
-        position={[5, 24, -50]}
+        position={[5, 24, -30]}
         angle={Math.PI / 3}
         intensity={performanceMode ? 1 : 5.4}
         penumbra={.9999}
@@ -31,15 +34,17 @@ function ThreeSceneComponent({ setMainVideo, modelRef, setModelLoaded, performan
         decay={0}
       />
       <ambientLight intensity={performanceMode ? 2 : 0.5} />
-
+       <Perf position="bottom-left" /> {/* shows FPS, draw calls, triangles, etc. */}
       {/* Scene Elements */}
       
-      <TestModel url="animefeKat1.glb" frustumCulled={false} />
+      <TestModel url="animeFeRed.glb" frustumCulled={false} />
       <CameraRig />
 
       {/* Postprocessing Effects (only in quality mode) */}
       {!performanceMode && (
         <EffectComposer disableNormalPass>
+        
+        
           <DepthOfField focusDistance={0.06} focalLength={0.09} bokehScale={.9} height={580} />
           <Bloom
             luminanceThreshold={0}
