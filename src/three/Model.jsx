@@ -8,7 +8,7 @@ export function Model({
   video6, video7, video8, video9, video10,
   setMainVideo, modelRef,   
 }) {
-  const gltf = useGLTF('tv_scene/tv_scene_F.glb')
+  const gltf = useGLTF('tv_scene/tv_scene1.glb')
   const videoTexturesRef = useRef({})
 
   useEffect(() => {

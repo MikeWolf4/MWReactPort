@@ -34,7 +34,7 @@ function ThreeSceneComponent({ setMainVideo, modelRef, setModelLoaded, performan
 
       {/* Scene Elements */}
       
-      <TestModel url="animefe.glb" frustumCulled={false} />
+      <TestModel url="animefeKat1.glb" frustumCulled={false} />
       <CameraRig />
 
       {/* Postprocessing Effects (only in quality mode) */}
