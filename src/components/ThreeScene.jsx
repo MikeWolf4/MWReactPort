@@ -19,14 +19,14 @@ function ThreeSceneComponent({ setMainVideo, modelRef, setModelLoaded, performan
   
   return (
     <Canvas
-      camera={{ position: [0, 0, 3], fov: 38 }}
+      camera={{ position: [0, 0, 3], fov: 37 }}
       dpr={performanceMode ? [1, 1.5] : [1, 1.5]} // Lower DPR for mobile/performance
     >
       {/* Lights */}
       <directionalLight position={[5, 5, 5]} rotation={0} intensity={0.1} />
       <hemisphereLight skyColor={0xffffff} groundColor={0x444444} intensity={0.5} />
       <spotLight
-        position={[5, 24, -30]}
+        position={[5, 24, -50]}
         angle={Math.PI / 3}
         intensity={performanceMode ? 1 : 5.4}
         penumbra={.9999}
@@ -45,20 +45,20 @@ function ThreeSceneComponent({ setMainVideo, modelRef, setModelLoaded, performan
         <EffectComposer disableNormalPass>
         
         
-          <DepthOfField focusDistance={0.06} focalLength={0.09} bokehScale={.9} height={580} />
-          <Bloom
+          <DepthOfField focusDistance={0.9} focalLength={2} bokehScale={.8} height={580} />
+          {/* <Bloom
             luminanceThreshold={0}
             mipmapBlur
             luminanceSmoothing={0.3}
             intensity={0.07}
-          />
+          /> */}
           <Vignette
             offset={0.8}
             darkness={0.4}
             eskil={false}
             blendFunction={BlendFunction.NORMAL}
           />
-          <Noise opacity={0.03} />
+          <Noise opacity={0.055} />
         </EffectComposer>
       )}
 

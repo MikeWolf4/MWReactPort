@@ -18,7 +18,7 @@ export function Floor() {
           depthScale={3}
           minDepthThreshold={0.3}
           maxDepthThreshold={.6}
-          color="#020202"
+          color="#010101"
           metalness={1}
         />
       </mesh>

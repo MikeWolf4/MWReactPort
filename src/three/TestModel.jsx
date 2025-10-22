@@ -6,8 +6,8 @@ export function TestModel({
   url,
   emissiveColor = '#ffffff',
   emissiveIntensity = -0.01,
-  outlineColor = '#353535',
-  outlineThickness = 0.0025,
+  outlineColor = '#560000',
+  outlineThickness = 0.003,
 }) {
   const meshRef = useRef()
   const { scene } = useGLTF(url)
@@ -171,8 +171,8 @@ export function TestModel({
         <primitive
           object={outlineScene}
           scale={[14, 14, 14.5]}
-          rotation={[0, , 0]}
-          position={[1, -15, -23]}
+          rotation={[0, 0, 0]}
+          position={[1, -15, -23.08]}
         />
       )}
     </>
