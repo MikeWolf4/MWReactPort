@@ -20,7 +20,7 @@ export function HamburgerMenu({
             {/* --- Hamburger Toggle Button --- */}
             <button
                 onClick={() => setOpen(prev => !prev)}
-                className="p-3 bg-black/70  rounded-lg hover:hover:bg-zinc-800/45 transition"
+                className="p-3 bg-black/0  rounded-lg hover:hover:bg-zinc-800/45 transition"
             >
                 <BurgerMenuIcon className="w-6 h-6 text-emerald-400" />
             </button>

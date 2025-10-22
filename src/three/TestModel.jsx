@@ -98,13 +98,13 @@ export function TestModel({
         ref={meshRef}
         object={scene}
         scale={[14, 14, 14]}
-        position={[0.5, -13, -20]}
+        position={[1, -13, -20]}
       />
       {outlineScene && (
         <primitive
           object={outlineScene}
           scale={[14, 14, 14]}
-          position={[0.5, -13, -20]}
+          position={[1, -13, -20]}
         />
       )}
     </>
