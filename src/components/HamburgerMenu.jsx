@@ -22,7 +22,7 @@ export function HamburgerMenu({
                 onClick={() => setOpen(prev => !prev)}
                 className="p-3 bg-black/70  rounded-lg hover:hover:bg-zinc-800/45 transition"
             >
-                <BurgerMenuIcon className="w-8 h-8 text-emerald-400" />
+                <BurgerMenuIcon className="w-6 h-6 text-emerald-400" />
             </button>
 
             {/* --- Dropdown Menu --- 
