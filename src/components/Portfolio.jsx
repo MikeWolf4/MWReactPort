@@ -254,8 +254,7 @@ export default function Portfolio() {
           <h2 className="text-4xl font-bold mb-8 text-center">About Me</h2>
           <div className="text-zinc-400 space-y-4 text-lg">
             <p>
-              Hey, I’m Michael Wolford. If you’re working on a game or web project and feeling stuck,
-              I’m happy to help.
+             I can’t promise I’ll have the perfect solution, but if you’re stuck on a game or web project, I’d be glad to take a look and help however I can.
             </p>
             <p>
               I’ve spent years working with Unreal Engine on things like locomotion setups,
@@ -263,7 +262,7 @@ export default function Portfolio() {
               person), inventory, replication, and character asset management.
             </p>
             <p>
-              On the web side, I also work with React, Three.js, and WebGL, building interactive
+              On the web side, I work with React, Three.js, and WebGL, building interactive
               sites and tools that bring game assets or ideas to life right in the browser.
             </p>
             <p>
@@ -272,9 +271,7 @@ export default function Portfolio() {
               creativity and tech can be frustrating when you’re solo or short on time.
             </p>
             <p>
-              I’m here to help people get unstuck, learn something new, and keep their projects
-              moving forward without the stress. If that sounds like what you need, feel free to
-              reach out.
+              If I can help someone get unstuck, teach them something new, or make their project move forward, then I’m doing what I love.
             </p>
           </div>
         </div>
