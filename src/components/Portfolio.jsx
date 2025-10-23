@@ -3,7 +3,6 @@ import { Stats } from '@react-three/drei'
 import { HamburgerMenu } from './HamburgerMenu.jsx'
 import { ProjectCard } from './ProjectCard'
 import { LoadingScreen } from './LoadingScreen'
-import { Perf } from 'r3f-perf'
 console.log("yes")
 const ThreeScene = lazy(() => import("./ThreeScene"));
 
@@ -209,6 +208,8 @@ export default function Portfolio() {
                 modelRef={modelRef}
                 setMainVideo={setMainVideo}
                 performanceMode={performanceMode}
+                isStatsVisible={isStatsVisible}
+                
               />
             </Suspense>
           </div>

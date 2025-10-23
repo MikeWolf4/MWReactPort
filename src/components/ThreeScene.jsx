@@ -15,13 +15,15 @@ import { TestModel } from '../three/TestModel'
 import { CameraRig } from '../three/CameraRig'
 
 
-function ThreeSceneComponent({ setMainVideo, modelRef, setModelLoaded, performanceMode }) {
+function ThreeSceneComponent({ setMainVideo, modelRef, setModelLoaded, performanceMode, isStatsVisible }) {
   
   return (
     <Canvas
       camera={{ position: [0, 0, 3], fov: 37 }}
       dpr={performanceMode ? [1, 1.5] : [1, 1.5]} // Lower DPR for mobile/performance
     >
+         {isStatsVisible && <Perf key="perf" position="bottom-left" />}
+
       {/* Lights */}
       <directionalLight position={[5, 5, 5]} rotation={0} intensity={0.1} />
       <hemisphereLight skyColor={0xffffff} groundColor={0x444444} intensity={0.5} />
@@ -34,10 +36,10 @@ function ThreeSceneComponent({ setMainVideo, modelRef, setModelLoaded, performan
         decay={0}
       />
       <ambientLight intensity={performanceMode ? 2 : 0.5} />
-       <Perf position="bottom-left" /> {/* shows FPS, draw calls, triangles, etc. */}
+       
       {/* Scene Elements */}
       
-      <TestModel url="animeFeRed.glb" frustumCulled={false} />
+      <TestModel url="animeFeRed1.glb" frustumCulled={false} />
       <CameraRig />
 
       {/* Postprocessing Effects (only in quality mode) */}
