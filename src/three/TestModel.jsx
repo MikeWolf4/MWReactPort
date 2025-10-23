@@ -4,8 +4,8 @@ import * as THREE from 'three'
 
 export function TestModel({
   url,
-  emissiveColor = '#ffffff',
-  emissiveIntensity = .2,
+  emissiveColor = 'rgba(236, 0, 0, 0)ff',
+  emissiveIntensity = .1,
   outlineColor = '#560000',
   outlineThickness = 0.003,
 }) {
