@@ -7,7 +7,6 @@
 ### 1. Initial Project Setup
 - Created a **React + Vite** boilerplate for a fast development environment.  
 - Integrated **TailwindCSS** for responsive, utility-based styling.  
-- Built a base portfolio layout with sections for web, game, and 3D projects.
 
 ### 2. Integrating Three.js with React
 - Added a **React Three Fiber** `<Canvas>` as the main 3D viewport.  
