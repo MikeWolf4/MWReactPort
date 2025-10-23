@@ -5,7 +5,7 @@ import * as THREE from 'three'
 export function TestModel({
   url,
   emissiveColor = '#ffffff',
-  emissiveIntensity = -0.01,
+  emissiveIntensity = .2,
   outlineColor = '#560000',
   outlineThickness = 0.003,
 }) {
@@ -83,8 +83,7 @@ export function TestModel({
         map: oldMat.map || null,
         metalness: 1,
         roughness: 0.0,
-        emissive: new THREE.Color(emissiveColor),
-        emissiveIntensity: Math.max(0, emissiveIntensity),
+        
         side: THREE.DoubleSide,
       })
       console.log(`Metal: ${child.name} (${oldMat.name})`)
@@ -96,7 +95,8 @@ export function TestModel({
         color: oldMat.color?.clone() || new THREE.Color('white'),
         map: oldMat.map || null,
         emissive: new THREE.Color(emissiveColor),
-        emissiveIntensity: Math.max(0, emissiveIntensity),
+emissiveMap: oldMat.map || null,
+emissiveIntensity: Math.max(0, emissiveIntensity),
         lightMapIntensity: 1.5,
         side: THREE.DoubleSide,
       })
@@ -109,7 +109,8 @@ export function TestModel({
         color: oldMat.color?.clone() || new THREE.Color('white'),
         map: oldMat.map || null,
         emissive: new THREE.Color(emissiveColor),
-        emissiveIntensity: Math.max(0, emissiveIntensity),
+emissiveMap: oldMat.map || null,
+emissiveIntensity: Math.max(0, emissiveIntensity),
         lightMapIntensity: 1.5,
         side: THREE.DoubleSide,
       })

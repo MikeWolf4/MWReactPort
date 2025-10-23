@@ -47,20 +47,20 @@ function ThreeSceneComponent({ setMainVideo, modelRef, setModelLoaded, performan
         <EffectComposer disableNormalPass>
         
         
-          <DepthOfField focusDistance={0.9} focalLength={2} bokehScale={.8} height={580} />
-          {/* <Bloom
+          <DepthOfField focusDistance={0.6} focalLength={2} bokehScale={.8} height={580} />
+          <Bloom
             luminanceThreshold={0}
             mipmapBlur
             luminanceSmoothing={0.3}
-            intensity={0.07}
-          /> */}
+            intensity={0.04}
+          />
           <Vignette
             offset={0.8}
             darkness={0.4}
             eskil={false}
             blendFunction={BlendFunction.NORMAL}
           />
-          <Noise opacity={0.055} />
+          <Noise opacity={0.03} />
         </EffectComposer>
       )}
 
