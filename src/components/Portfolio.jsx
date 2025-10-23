@@ -390,7 +390,16 @@ export default function Portfolio() {
       {/* ─────────────── FOOTER ─────────────── */}
       <footer className="border-t border-zinc-800 py-8 px-6 text-center text-zinc-500">
         <p>© 2025 Michael Wolford. Built with React & Three Fiber/Drei.</p>
+         <a
+    href="https://github.com/MikeWolf4/MWReactPort/blob/main/README.md"
+    target="_blank"
+    rel="noopener noreferrer"
+   className="hover:text-zinc-500 transition-colors border-t border-zinc-800 py-8 px-6 text-center text-emerald-400"
+  >
+    Dev Notes Link
+  </a>
       </footer>
+      
     </div>
   )
 }

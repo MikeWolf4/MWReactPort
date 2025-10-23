@@ -101,6 +101,15 @@ export function HamburgerMenu({
                     {isStatsVisible ? "Hide Stats" : "Show Stats"}
                 </button>
 
+                 <a
+    href="https://github.com/MikeWolf4/MWReactPort/blob/main/README.md"
+    target="_blank"
+    rel="noopener noreferrer"
+   className="hover:text-zinc-500 transition-colors border-t border-zinc-800 py-8 px-6 text-center text-emerald-400"
+  >
+    Dev Notes
+  </a>
+
                 {/* --- Menu Items End Here --- */}
 
             </div>
