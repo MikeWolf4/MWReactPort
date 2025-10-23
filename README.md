@@ -9,7 +9,7 @@
 - Integrated **TailwindCSS** for responsive, utility-based styling.  
 
 ### 2. Integrating Three.js with React
-- Added a **React Three Fiber** `<Canvas>` as the main 3D viewport.  
+- Added a **React Three Fiber** `<Canvas>` as the main 3D viewport under the title section.  
 - Configured a dynamic **camera rig** for pointer-driven motion.  
 - Used **lazy loading** (`React.lazy` + `<Suspense>`) to defer heavy components and reduce initial load.  
 - Memoized static components (`React.memo`, `useMemo`) to avoid unnecessary re-renders.
