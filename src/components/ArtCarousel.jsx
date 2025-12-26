@@ -12,12 +12,12 @@ function ArtCarousel() {
 
     const images = useMemo(
         () => [
-        { src: "/art/Illustration_4_EllenJoe.jpg", width: 2400, height: 3000, alt: "Ellen study" },
-        { src: "/art/Illustration_2_Hibi_OC_crop.png", width: 3000, height: 2000, alt: "Cyberpunk scene" },
-        { src: "/art/Illustration_1_raidenshogun.png", width: 2400, height: 2400, alt: "Portrait" },
-        { src: "/art/IllustrationLineArtSamples.jpg", width: 3840, height: 2160, alt: "Soon" },
-        { src: "/art/Placeholder.jpg", width: 3840, height: 2160, alt: "Soon" },
-        { src: "/art/Placeholder.jpg", width: 3840, height: 2160, alt: "Soon" },
+        { src: "${import.meta.env.BASE_URL}art/Illustration_4_EllenJoe.jpg", width: 2400, height: 3000, alt: "Ellen study" },
+        { src: "${import.meta.env.BASE_URL}art/Illustration_2_Hibi_OC_crop.png", width: 3000, height: 2000, alt: "Cyberpunk scene" },
+        { src: "${import.meta.env.BASE_URL}art/Illustration_1_raidenshogun.png", width: 2400, height: 2400, alt: "Portrait" },
+        { src: "${import.meta.env.BASE_URL}art/IllustrationLineArtSamples.jpg", width: 3840, height: 2160, alt: "Soon" },
+        { src: "${import.meta.env.BASE_URL}art/Placeholder.jpg", width: 3840, height: 2160, alt: "Soon" },
+        { src: "${import.meta.env.BASE_URL}art/Placeholder.jpg", width: 3840, height: 2160, alt: "Soon" },
         ],
         []
     );    
