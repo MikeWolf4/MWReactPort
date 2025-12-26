@@ -5,8 +5,8 @@
 ##  Setup Process
 
 ### 1. Initial Project Setup
-- Created a **React + Vite** boilerplate for a fast development environment.  
-- Integrated **TailwindCSS** for responsive, utility-based styling.  
+- Created a **React + Vite** boilerplate.  
+- Added **TailwindCSS**.  
 
 ### 2. Integrating Three.js with React
 - Added a **React Three Fiber** `<Canvas>` as the main 3D viewport under the title section.  
@@ -68,7 +68,6 @@
 - Used **lazy loading** for large Three.js components to improve startup time.  
 - Wrapped expensive logic in `useMemo` and static assets in `React.memo`.  
 - Monitored draw calls and triangle counts using **r3f-perf** for real-time GPU metrics.  
-- Ensured consistent 150–175 FPS average on desktop at ~1M triangles.
 
 ---
 
