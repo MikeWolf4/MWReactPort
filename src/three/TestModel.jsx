@@ -26,7 +26,7 @@ export function TestModel({
 
     // Cache so we don't recreate identical materials
     const materialCache = new Map()
-
+    
     scene.traverse((child) => {
   if (!child.isMesh) return
 

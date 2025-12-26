@@ -1,12 +1,8 @@
-import React from 'react' // 👈 Import React to access React.memo
+import React from 'react' // Import React to access React.memo
 import { Canvas } from '@react-three/fiber'
 import { EffectComposer, DepthOfField, Bloom, Vignette, Noise, Glitch } from '@react-three/postprocessing'
 import { BlendFunction} from 'postprocessing'
-import { MeshReflectorMaterial, useTexture } from '@react-three/drei'
 import { Perf } from 'r3f-perf'
-
-
-
 
 // R3F Components
 import { Floor } from '../three/Floor'

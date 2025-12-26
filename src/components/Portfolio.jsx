@@ -3,6 +3,7 @@ import { Stats } from '@react-three/drei'
 import { HamburgerMenu } from './HamburgerMenu.jsx'
 import { ProjectCard } from './ProjectCard'
 import { LoadingScreen } from './LoadingScreen'
+import ArtCarousel from "./ArtCarousel";
 console.log("yes")
 const ThreeScene = lazy(() => import("./ThreeScene"));
 
@@ -145,9 +146,13 @@ export default function Portfolio() {
             <a href="#projects" className="hover:text-emerald-400 transition-colors">
               Skills
             </a>
+             <a href="#art" className="hover:text-emerald-400 transition-colors">
+              Art
+            </a>
             <a href="#contact" className="hover:text-emerald-400 transition-colors">
               Contact
             </a>
+           
           </div>
 
           {isStatsVisible && (
@@ -247,14 +252,17 @@ export default function Portfolio() {
           </div>
         )}
       </section>
-
+      <section id="art">
+        <ArtCarousel  />
+        </section>
+        
       {/* ─────────────── ABOUT ─────────────── */}
       <section id="about" className="py-20 px-6 bg-zinc-950">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold mb-8 text-center">About Me</h2>
           <div className="text-zinc-400 space-y-4 text-lg">
             <p>
-             I can’t promise I’ll have the perfect solution, but if you’re stuck on a game or web project, I’d be glad to take a look and help however I can.
+             If you’re stuck on a game or web project, I’d be glad to take a look and help however I can.
             </p>
             <p>
               I’ve spent years working with Unreal Engine on things like locomotion setups,
