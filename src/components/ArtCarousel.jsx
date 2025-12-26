@@ -9,15 +9,15 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/styles.css";
 
 function ArtCarousel() {
-  // Replace with your real images (ideally include width/height for best results)
+
   const images = useMemo(
     () => [
-      { src: "art/Illustration_4_EllenJoe.jpg", width: 2400, height: 3000, alt: "Ellen study" },
-      { src: "art/Illustration_2_Hibi_OC_crop.png", width: 3000, height: 2000, alt: "Cyberpunk scene" },
-      { src: "art/Illustration_1_raidenshogun.png", width: 2400, height: 2400, alt: "Portrait" },
-      { src: "art/IllustrationLineArtSamples.jpg", width: 3840, height: 2160, alt: "Soon" },
-      { src: "art/Placeholder.jpg", width: 3840, height: 2160, alt: "Soon" },
-      { src: "art/Placeholder.jpg", width: 3840, height: 2160, alt: "Soon" },
+      { src: "./art/Illustration_4_EllenJoe.jpg", width: 2400, height: 3000, alt: "Ellen study" },
+      { src: "./art/Illustration_2_Hibi_OC_crop.png", width: 3000, height: 2000, alt: "Cyberpunk scene" },
+      { src: "./art/Illustration_1_raidenshogun.png", width: 2400, height: 2400, alt: "Portrait" },
+      { src: "./art/IllustrationLineArtSamples.jpg", width: 3840, height: 2160, alt: "Soon" },
+      { src: "./art/Placeholder.jpg", width: 3840, height: 2160, alt: "Soon" },
+      { src: "./art/Placeholder.jpg", width: 3840, height: 2160, alt: "Soon" },
     ],
     []
   );    
@@ -94,7 +94,6 @@ function ArtCarousel() {
         on={{ view: ({ index: i }) => setIndex(i) }}
         plugins={[Zoom]}
         zoom={{
-          // scrollwheel zoom + trackpad pinch feel good
           maxZoomPixelRatio: 4,
           scrollToZoom: true,
           wheelZoomDistanceFactor: 80,
