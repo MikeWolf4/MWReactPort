@@ -13,7 +13,7 @@ function ArtCarousel() {
     const images = useMemo(
         () => [
         { src: `${import.meta.env.BASE_URL}art/Illustration5_miyabi.jpg`, width: 2400, height: 3000, alt: "Miyabi Fan Art" },
-        { src: `${import.meta.env.BASE_URL}art/Illustration4EllenRenew2tag.jpg`, width: 2400, height: 3000, alt: "Ellen Fan Art" },
+        { src: `${import.meta.env.BASE_URL}art/Illustration4EllenRenewFinal2.jpg`, width: 2400, height: 3000, alt: "Ellen Fan Art" },
         { src: `${import.meta.env.BASE_URL}art/Illustration_2_Hibi_OC_crop.png`, width: 3000, height: 2000, alt: "Cyberpunk OC" },
         { src: `${import.meta.env.BASE_URL}art/Illustration_1_raidenshogun.png`, width: 2400, height: 2400, alt: "Raiden Fan Art" },
         { src: `${import.meta.env.BASE_URL}art/IllustrationLineArtSamples.jpg`, width: 3840, height: 2160, alt: "Soon" },
