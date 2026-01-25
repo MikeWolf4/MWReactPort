@@ -12,7 +12,7 @@ function ArtCarousel() {
 
     const images = useMemo(
         () => [
-        { src: `${import.meta.env.BASE_URL}art/anatomyfunport.jpg`, width: 2400, height: 3000, alt: "OC Beach" },
+        { src: `${import.meta.env.BASE_URL}art/anatomyfunport1.jpg`, width: 2400, height: 3000, alt: "OC Beach" },
         { src: `${import.meta.env.BASE_URL}art/Illustration8draftfix.jpg`, width: 2400, height: 3000, alt: "OC Cyber Fan Art" },
         { src: `${import.meta.env.BASE_URL}art/Illustration5_miyabi.jpg`, width: 2400, height: 3000, alt: "Miyabi Fan Art" },
         { src: `${import.meta.env.BASE_URL}art/Illustration4EllenRenewFinal2.jpg`, width: 2400, height: 3000, alt: "Ellen Fan Art" },
