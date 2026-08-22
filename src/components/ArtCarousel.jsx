@@ -11,19 +11,55 @@ import "yet-another-react-lightbox/styles.css";
 function ArtCarousel() {
 
     const images = useMemo(
-        () => [
-        { src: `${import.meta.env.BASE_URL}art/anatomyfunport1.jpg`, width: 2400, height: 3000, alt: "OC Beach" },
-        { src: `${import.meta.env.BASE_URL}art/Illustration8draftfix1.jpg`, width: 2400, height: 3000, alt: "OC Cyber Fan Art" },
-        { src: `${import.meta.env.BASE_URL}art/Illustration5_miyabi.jpg`, width: 2400, height: 3000, alt: "Miyabi Fan Art" },
-        { src: `${import.meta.env.BASE_URL}art/Illustration4EllenRenewFinal2.jpg`, width: 2400, height: 3000, alt: "Ellen Fan Art" },
-        { src: `${import.meta.env.BASE_URL}art/Illustration_2_Hibi_OC_crop.png`, width: 3000, height: 2000, alt: "Cyberpunk OC" },
-        { src: `${import.meta.env.BASE_URL}art/Illustration_1_raidenshogun.png`, width: 2400, height: 2400, alt: "Raiden Fan Art" },
-        { src: `${import.meta.env.BASE_URL}art/IllustrationLineArtSamples.jpg`, width: 3840, height: 2160, alt: "Soon" },
-        { src: `${import.meta.env.BASE_URL}art/Placeholder.jpg`, width: 3840, height: 2160, alt: "Soon" },
-        { src: `${import.meta.env.BASE_URL}art/Placeholder.jpg`, width: 3840, height: 2160, alt: "Soon" },
-        ],
-        []
-    );    
+  () => [
+    {
+      thumb: `${import.meta.env.BASE_URL}art/thumbs/anatomyfunport1.jpg`,
+      src: `${import.meta.env.BASE_URL}art/anatomyfunport1.jpg`,
+      width: 2400, height: 3000, alt: "OC Beach"
+    },
+    {
+      thumb: `${import.meta.env.BASE_URL}art/thumbs/Illustration8draftfix1.jpg`,
+      src: `${import.meta.env.BASE_URL}art/Illustration8draftfix1.jpg`,
+      width: 2400, height: 3000, alt: "OC Cyber Fan Art"
+    },
+    {
+      thumb: `${import.meta.env.BASE_URL}art/thumbs/Illustration5_miyabi.jpg`,
+      src: `${import.meta.env.BASE_URL}art/Illustration5_miyabi.jpg`,
+      width: 2400, height: 3000, alt: "Miyabi Fan Art"
+    },
+    {
+      thumb: `${import.meta.env.BASE_URL}art/thumbs/Illustration4EllenRenewFinal2.jpg`,
+      src: `${import.meta.env.BASE_URL}art/Illustration4EllenRenewFinal2.jpg`,
+      width: 2400, height: 3000, alt: "Ellen Fan Art"
+    },
+    {
+      thumb: `${import.meta.env.BASE_URL}art/thumbs/Illustration_2_Hibi_OC_crop.png`,
+      src: `${import.meta.env.BASE_URL}art/Illustration_2_Hibi_OC_crop.png`,
+      width: 3000, height: 2000, alt: "Cyberpunk OC"
+    },
+    {
+      thumb: `${import.meta.env.BASE_URL}art/thumbs/Illustration_1_raidenshogun.png`,
+      src: `${import.meta.env.BASE_URL}art/Illustration_1_raidenshogun.png`,
+      width: 2400, height: 2400, alt: "Raiden Fan Art"
+    },
+    {
+      thumb: `${import.meta.env.BASE_URL}art/thumbs/IllustrationLineArtSamples.jpg`,
+      src: `${import.meta.env.BASE_URL}art/IllustrationLineArtSamples.jpg`,
+      width: 3840, height: 2160, alt: "Soon"
+    },
+    {
+      thumb: `${import.meta.env.BASE_URL}art/thumbs/Placeholder.jpg`,
+      src: `${import.meta.env.BASE_URL}art/Placeholder.jpg`,
+      width: 3840, height: 2160, alt: "Soon"
+    },
+    {
+      thumb: `${import.meta.env.BASE_URL}art/thumbs/Placeholder.jpg`,
+      src: `${import.meta.env.BASE_URL}art/Placeholder.jpg`,
+      width: 3840, height: 2160, alt: "Soon"
+    },
+  ],
+  []
+);  
 
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
@@ -72,7 +108,7 @@ function ArtCarousel() {
                 }}
               >
                 <img
-                  src={img.src}
+                  src={img.thumb}
                   alt={img.alt ?? ""}
                   loading="lazy"
                   style={{
